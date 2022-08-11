@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+  useLocation,
+  useParams
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import { HomePage } from './components/home/home.component';
+import { WordModal } from './components/word-modal/word-modal.component';
+
+const App = () => {
+
+  let location = useLocation();
+  let background = location.state && location.state.background;
+
+  return (<>
+    <Switch location={background || location}>
+     <Route exact path="/" children={<HomePage />} />
+    </Switch>
+    {background && <Route path="/:word" children={<WordModal />}/>}
+   </>)
+  
 }
 
 export default App;

@@ -1,0 +1,44 @@
+.modal {
+    border-radius: 5px;
+    color: rgb(57, 57, 57);
+    min-height: 30%;
+
+}
+
+.modal .heading {
+    text-align: center;
+    margin: 20px;
+}
+
+.modal h3 {
+    font-style: italic;
+}
+
+.modal button {
+     position: absolute;
+     right: 10px;
+     top: 10px;
+     width: 20px;
+     height: 20px;
+     outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    background: #B721FF;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    
+}
+
+.spinner {
+    text-align: center;
+}
+
+.error-message{
+    color: rgb(250, 94, 94);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
